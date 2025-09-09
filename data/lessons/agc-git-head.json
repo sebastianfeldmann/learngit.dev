@@ -1,0 +1,24 @@
+{
+  "title": "Git Head",
+  "description": "",
+  "category": "advanced",
+  "level": "advanced",
+  "time": "10 minutes",
+  "order": 3,
+  "next": "agc-merge-strategies",
+  "previous": "agc-git-objects",
+  "steps": [
+    {
+      "id": 1,
+      "title": "First Step",
+      "description": "Taking the first step",
+      "allowedCommands": [
+        {
+          "cmd": "foo",
+          "valid": "^foo$",
+          "output": ""
+        }
+      ]
+    }
+  ]
+}

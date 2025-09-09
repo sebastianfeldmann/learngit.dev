@@ -1,0 +1,24 @@
+{
+  "title": "Git Merge Strategies",
+  "description": "",
+  "category": "advanced",
+  "order": 4,
+  "level": "advanced",
+  "time": "10 minutes",
+  "next": "agc-rebase",
+  "previous": "agc-git-head",
+  "steps": [
+    {
+      "id": 1,
+      "title": "First Step",
+      "description": "Taking the first step",
+      "allowedCommands": [
+        {
+          "cmd": "foo",
+          "valid": "^foo$",
+          "output": ""
+        }
+      ]
+    }
+  ]
+}
