@@ -1,0 +1,16 @@
+{
+    "name": "learngit.dev/app",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "LearnGit\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sebastian Feldmann",
+            "email": "sf@sebastian-feldmann.info"
+        }
+    ],
+    "require": {}
+}

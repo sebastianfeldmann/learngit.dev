@@ -1,0 +1,637 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Container and layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.back-link {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.back-link:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Main content */
+main {
+    padding: 2rem 0;
+}
+
+/* Scenarios grid */
+.lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.lesson-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.lesson-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.lesson-title {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.lesson-description {
+    color: #6c757d;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+/* Scenario page layout */
+.lesson-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.lesson-sidebar {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    height: fit-content;
+    position: sticky;
+    top: 2rem;
+}
+
+.lesson-sidebar h3 {
+    color: #2c3e50;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.progress-section,
+.current-step-section,
+.hints-section {
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    background: #e9ecef;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.step-info h4 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+}
+
+.step-info p {
+    color: #6c757d;
+    font-size: 0.95rem;
+}
+
+.allowed-commands {
+    list-style: none;
+}
+
+.allowed-commands li {
+    background: #f8f9fa;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    border-left: 3px solid #667eea;
+    position: relative;
+    cursor: help;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.allowed-commands li:hover {
+    background: #e9ecef;
+    position: relative;
+    width: calc(100% + 350px);
+    max-width: 600px;
+    overflow: visible;
+    text-overflow: clip;
+    z-index: 1000;
+    border-left: 3px solid #667eea;
+    margin-right: -350px;
+    color: #495057;
+}
+
+.allowed-commands li:active {
+    background: #dee2e6;
+    transform: translateY(1px);
+}
+
+/* Terminal navigation */
+.terminal-navigation {
+    margin-bottom: 20px;
+}
+
+/* Scenario complete */
+.lesson-complete {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.complete-message h2 {
+    color: #28a745;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.complete-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Footer */
+.footer {
+    background: #2c3e50;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+/* Tooltip styles */
+.tooltip {
+    position: absolute;
+    background: white;
+    color: #333;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    white-space: nowrap;
+    max-width: 586px;
+    white-space: normal;
+    z-index: 1000;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(5px);
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none;
+}
+
+.tooltip.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HTML element styles within tooltips */
+.tooltip strong, .tooltip b {
+    font-weight: bold;
+    color: #222;
+}
+
+.tooltip i, .tooltip em {
+    font-style: italic;
+    color: #667eea;
+}
+
+.tooltip u {
+    color: #d73a49;
+    text-decoration: none;
+}
+
+.tooltip code {
+    background: #f1f3f4;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.85em;
+    color: #d73a49;
+}
+
+.tooltip a {
+    color: #667eea;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.tooltip a:hover {
+    color: #5a67d8;
+}
+
+.tooltip br {
+    line-height: 1.6;
+}
+
+/* Category sections */
+.categories-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-section {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.category-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.category-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.category-header h2 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.category-header h2 a:hover {
+    color: #667eea;
+}
+
+/* Scenario metadata badges */
+.lesson-meta, .lesson-meta-header {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.lesson-level, .lesson-time {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.lesson-level {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.lesson-level.level-beginner {
+    background: #e8f5e8;
+    color: #2e7d32;
+}
+
+.lesson-level.level-intermediate {
+    background: #fff3e0;
+    color: #f57c00;
+}
+
+.lesson-level.level-advanced {
+    background: #fce4ec;
+    color: #c2185b;
+}
+
+.lesson-time {
+    background: #f3e5f5;
+    color: #7b1fa2;
+}
+
+/* Scenario cards updates */
+.lesson-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson-header {
+    margin-bottom: 1rem;
+}
+
+.lesson-header h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.lesson-header h3 a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.lesson-header h3 a:hover {
+    color: #667eea;
+}
+
+.lesson-description {
+    flex: 1;
+    margin-bottom: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.breadcrumbs a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.breadcrumbs a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.breadcrumbs .current {
+    color: white;
+    font-weight: 500;
+    opacity: 1;
+}
+
+/* No scenarios message */
+.no-scenarios {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+}
+
+/* Scenario navigation arrows */
+.lesson-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.nav-arrow {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    --background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.nav-arrow:hover {
+    background: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    color: #667eea;
+}
+
+.nav-arrow-left {
+    left: 10px;
+}
+
+.nav-arrow-right {
+    right: 10px;
+}
+
+.lesson-navigation h1 {
+    margin: 0;
+    text-align: center;
+    flex: 1;
+}
+
+/* Button updates */
+.btn-primary {
+    background: #667eea;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background: #5a67d8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    .lesson-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .lessons-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Tablet view - force 2 columns for better space usage */
+@media (min-width: 600px) and (max-width: 1200px) {
+    .lessons-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .lesson-sidebar {
+        position: static;
+    }
+    
+    .complete-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    /* Adjust command expansion for mobile */
+    .allowed-commands li:hover {
+        width: calc(100% + 250px);
+        max-width: 400px;
+        margin-right: -250px;
+    }
+    
+    .allowed-commands li:active {
+        background: #dee2e6;
+        transform: translateY(1px);
+    }
+    
+    /* Adjust tooltip size for mobile */
+    .tooltip {
+        width: calc(100% + 250px);
+        max-width: 400px;
+    }
+    
+    /* Category mobile styles */
+    .category-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .lesson-meta, .lesson-meta-header {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .lesson-level, .lesson-time {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+    
+    .breadcrumbs {
+        font-size: 0.8rem;
+    }
+    
+    .breadcrumb-separator {
+        margin: 0 0.3rem;
+    }
+    
+    /* Mobile navigation arrows */
+    .nav-arrow {
+        display: none;
+    }
+    
+    .lesson-navigation {
+        padding: 0 1rem;
+    }
+}
+
