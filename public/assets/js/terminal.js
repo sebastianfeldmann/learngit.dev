@@ -366,8 +366,8 @@ class GitTerminal {
                         li.textContent = command.cmd;
                         
                         // Add tooltip for command hint if available
-                        if (command.cmdHint) {
-                            this.setupTooltip(li, command.cmdHint);
+                        if (command.hint) {
+                            this.setupTooltip(li, command.hint);
                         }
                     }
                     

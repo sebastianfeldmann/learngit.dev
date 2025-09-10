@@ -317,6 +317,17 @@ main {
     color: #d73a49;
 }
 
+.tooltip ol {
+    list-style-type: decimal;
+    margin: 0.5rem 0;
+    padding-left: 2.2rem;
+}
+
+.tooltip li {
+    margin: 0.25rem 0;
+    line-height: 1.4;
+}
+
 .tooltip a {
     color: #667eea;
     text-decoration: underline;

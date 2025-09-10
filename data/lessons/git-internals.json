@@ -13,14 +13,14 @@
       "allowedCommands": [
         {
           "cmd": "git init",
-          "cmdHint": "Initializes a new Git repository in the current directory",
           "valid": "^git\\s+init$",
           "output": [
             {
               "text": "Initialized empty Git repository in /path/to/repo/.git/",
               "hint": "This output shows we've created a new repository in the current directory."
             }
-          ]
+          ],
+          "hint": "Initializes a new Git repository in the current directory"
         }
       ]
     },
@@ -31,9 +31,9 @@
       "allowedCommands": [
         {
           "cmd": "touch README.md",
-          "cmdHint": "Creates a new file called README.md",
           "valid": "^git\\s+touch\\s+README\\.md$",
-          "output": []
+          "output": [],
+          "hint": "Creates a new file called README.md"
         }
       ]
     },
@@ -61,9 +61,9 @@
       "allowedCommands": [
         {
           "cmd": "git add README.md",
-          "cmdHint": "<b>Add</b> the README.md file to the staging area",
           "valid": "^git\\s+add\\s+README\\.md$",
-          "output": []
+          "output": [],
+          "hint": "<b>Add</b> the README.md file to the staging area"
         }
       ]
     },

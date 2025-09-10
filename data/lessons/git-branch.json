@@ -13,14 +13,14 @@
       "allowedCommands": [
         {
           "cmd": "git branch",
-          "cmdHint": "Shows all local <i>branches</i> - the current branch is marked with an <i>*</i>",
           "valid": "^git\\s+branch$",
           "output": [
             {
               "text": "* main",
               "hint": "<i>main</i> or <i>master</i> are just default names for the <i>default branch</i>. You can change the default brach name by running <code>git config --global init.defaultBranch <i>branch-name</i></code>."
             }
-          ]
+          ],
+          "hint": "Shows all local <i>branches</i> - the current branch is marked with an <i>*</i>"
         }
       ]
     },
@@ -31,31 +31,31 @@
       "allowedCommands": [
         {
           "cmd": "git branch demo-branch",
-          "cmdHint": "You can use branch names like <i>feature/demo-branch</i> or <i>bugfix/issue-123</i> do keep your branches organized.",
           "valid": "^git\\s+branch\\s+[a-z -_/]+$",
-          "output": []
+          "output": [],
+          "hint": "You can use branch names like <i>feature/demo-branch</i> or <i>bugfix/issue-123</i> do keep your branches organized."
         },
         {
           "cmd": "git switch -c demo-branch",
-          "cmdHint": "Modern way to create a new branch called <i>demo-branch</i> and immediately check it out",
           "valid": "^git\\s+switch\\s+-c\\s+[a-z -_/]+$",
           "next": 4,
           "output": [
             {
               "text": "Switched to a new branch 'demo-branch'"
             }
-          ]
+          ],
+          "hint": "Modern way to create a new branch called <i>demo-branch</i> and immediately check it out"
         },
         {
           "cmd": "git checkout -b demo-branch",
-          "cmdHint": "Legacy way to create a new branch called <i>demo-branch</i> and immediately check it out",
           "valid": "^git\\s+checkout\\s+-b\\s+[a-z -_/]+$",
           "next": 4,
           "output": [
             {
               "text": "Switched to a new branch 'demo-branch'"
             }
-          ]
+          ],
+          "hint": "Legacy way to create a new branch called <i>demo-branch</i> and immediately check it out"
         }
       ]
     },
@@ -66,23 +66,23 @@
       "allowedCommands": [
         {
           "cmd": "git switch demo-branch",
-          "cmdHint": "The modern way to switch to the new branch called <i>demo-branch</i>",
           "valid": "^git\\s+switch\\s+[a-z -_/]+$",
           "output": [
             {
               "text": "Switched to branch 'demo-branch'"
             }
-          ]
+          ],
+          "hint": "The modern way to switch to the new branch called <i>demo-branch</i>"
         },
         {
           "cmd": "git checkout demo-branch",
-          "cmdHint": "The legacy way to switch to the new branch called <i>demo-branch</i>",
           "valid": "^git\\s+checkout\\s+[a-z -_/]+$",
           "output": [
             {
               "text": "Switched to branch 'demo-branch'"
             }
-          ]
+          ],
+          "hint": "The legacy way to switch to the new branch called <i>demo-branch</i>"
         }
       ]
     },
@@ -93,9 +93,9 @@
       "allowedCommands": [
         {
           "cmd": "echo \"Demo Branch File\" > demo.md",
-          "cmdHint": "Creates a new file called <i>demo.md</i> and adds some content to it",
           "valid": "^echo\\s*['\"]Demo Branch File['\"]\\s*>\\s*demo\\.md$",
-          "output": []
+          "output": [],
+          "hint": "Creates a new file called <i>demo.md</i> and adds some content to it"
         }
       ]
     },
@@ -111,7 +111,6 @@
         },
         {
           "cmd": "git commit -a -m \"My demo change\"",
-          "cmdHint": "Add everything to the <i>staging area</i> and create a <i>commit</i> with the specified <i>commit message</i>",
           "valid": "^git\\s+commit\\s+-a\\s+-m\\s*['\"]My demo change['\"]$",
           "next": 7,
           "output": [
@@ -119,7 +118,8 @@
               "text": "[demo-branch2 610af4c] My Demo Changes\n 1 file changed, 1 insertion(+)\n create mode 100644 demo.md",
               "hint": "Shows the <i>commit hash</i> (610af4c), files changed, and that this is the second commit (<i>demo-branch2</i>) on the <i>demo-branch</i> branch<br><img src=\"/assets/gfx/lessons/git-branch-1.svg\">"
             }
-          ]
+          ],
+          "hint": "Add everything to the <i>staging area</i> and create a <i>commit</i> with the specified <i>commit message</i>"
         }
       ]
     },
@@ -159,13 +159,13 @@
       "allowedCommands": [
         {
           "cmd": "git switch main",
-          "cmdHint": "Switch to the <i>main</i> branch",
           "valid": "^git\\s+switch\\s+main$",
           "output": [
             {
               "text": "Switched to branch 'main'"
             }
-          ]
+          ],
+          "hint": "Switch to the <i>main</i> branch"
         }
       ]
     },
@@ -176,13 +176,13 @@
       "allowedCommands": [
         {
           "cmd": "git merge demo-branch",
-          "cmdHint": "Merge the <i>demo-branch</i> into the <i>main</i> branch",
           "valid": "^git\\s+merge\\s+demo-branch$",
           "output": [
             {
               "text": "Merge made by the 'recursive' strategy."
             }
-          ]
+          ],
+          "hint": "Merge the <i>demo-branch</i> into the <i>main</i> branch"
         }
       ]
     },

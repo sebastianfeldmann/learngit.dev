@@ -14,16 +14,16 @@
       "allowedCommands": [
         {
           "cmd": "mkdir git-advanced",
-          "cmdHint": "Make sure not to create this directory within another <i>repository</i>",
           "valid": "^mkdir\\s+git-advanced$",
-          "output": []
+          "output": [],
+          "hint": "Make sure not to create this directory within another <i>repository</i>"
         },
         {
           "cmd": "mkdir git-advanced && cd git-advanced",
-          "cmdHint": "Create the directory and change into it",
           "valid": "^mkdir\\s+git-advanced\\s*&&\\s*cd\\s+git-advanced$",
           "next": 3,
-          "output": []
+          "output": [],
+          "hint": "Create the directory and change into it"
         }
       ]
     },
