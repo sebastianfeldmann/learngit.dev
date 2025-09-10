@@ -1,4 +1,4 @@
-# learngit.dev
+# learngit.online
 
 An interactive web-based Git learning platform that simulates a terminal environment where users can practice Git commands through guided scenarios.
 

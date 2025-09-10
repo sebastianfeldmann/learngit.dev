@@ -1,5 +1,5 @@
 {
-    "name": "learngit.dev/app",
+    "name": "learngit.online/app",
     "type": "project",
     "autoload": {
         "psr-4": {

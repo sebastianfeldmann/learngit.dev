@@ -16,14 +16,14 @@
           "cmd": "mkdir git-advanced",
           "cmdHint": "Make sure not to create this directory within another <i>repository</i>",
           "valid": "^mkdir\\s+git-advanced$",
-          "output": ""
+          "output": []
         },
         {
           "cmd": "mkdir git-advanced && cd git-advanced",
           "cmdHint": "Create the directory and change into it",
           "valid": "^mkdir\\s+git-advanced\\s*&&\\s*cd\\s+git-advanced$",
-          "output": "",
-          "next": 3
+          "next": 3,
+          "output": []
         }
       ]
     },
@@ -35,7 +35,7 @@
         {
           "cmd": "cd git-advanced",
           "valid": "^cd\\s+git-advanced$",
-          "output": ""
+          "output": []
         }
       ]
     },
@@ -47,8 +47,12 @@
         {
           "cmd": "git init",
           "valid": "^git\\s+init$",
-          "output": "Initialized empty Git repository in /Users/sf/git-advanced/.git/",
-          "outputHint": "The path to your repository on your computer will naturally differ from the one displayed here."
+          "output": [
+            {
+              "text": "Initialized empty Git repository in /Users/sf/git-advanced/.git/",
+              "hint": "The path to your repository on your computer will naturally differ from the one displayed here."
+            }
+          ]
         }
       ]
     }

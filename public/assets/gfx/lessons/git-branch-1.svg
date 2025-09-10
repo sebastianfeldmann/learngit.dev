@@ -1,0 +1,13 @@
+<svg width="94" height="36" xmlns="http://www.w3.org/2000/svg">
+ <g id="Layer_1">
+  <title>Layer 1</title>
+  <line stroke="#666666" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_14" y2="28.4996" x2="85.75342" y1="28.4996" x1="57.4991" fill="none"/>
+  <line transform="rotate(45 47.3768 18.2498)" stroke="#666666" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_11" y2="18.2498" x2="61.50392" y1="18.2498" x1="33.2496" fill="none"/>
+  <line stroke="#666666" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="8.00001" x2="36.75442" y1="8.00001" x1="8.5001" fill="none"/>
+  <ellipse stroke="null" ry="7.00002" rx="7.00002" id="svg_3" cy="7.75001" cx="8" fill="#ff0000"/>
+  <ellipse stroke="null" ry="7.00002" rx="7.00002" id="svg_10" cy="7.75001" cx="37.07841" fill="#ff0000"/>
+  <ellipse stroke="null" ry="7.00002" rx="7.00002" id="svg_12" cy="28.24959" cx="57.328" fill="#0000ff"/>
+  <ellipse stroke="null" ry="7.00002" rx="7.00002" id="svg_13" cy="28.24959" cx="85.51739" fill="#0000ff"/>
+ </g>
+
+</svg>

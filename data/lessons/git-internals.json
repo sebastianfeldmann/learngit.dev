@@ -15,8 +15,12 @@
           "cmd": "git init",
           "cmdHint": "Initializes a new Git repository in the current directory",
           "valid": "^git\\s+init$",
-          "output": "Initialized empty Git repository in /path/to/repo/.git/",
-          "outputHint": "This output shows we've created a new repository in the current directory."
+          "output": [
+            {
+              "text": "Initialized empty Git repository in /path/to/repo/.git/",
+              "hint": "This output shows we've created a new repository in the current directory."
+            }
+          ]
         }
       ]
     },
@@ -29,7 +33,7 @@
           "cmd": "touch README.md",
           "cmdHint": "Creates a new file called README.md",
           "valid": "^git\\s+touch\\s+README\\.md$",
-          "output": ""
+          "output": []
         }
       ]
     },
@@ -41,8 +45,12 @@
         {
           "cmd": "git status",
           "valid": "^git\\s+status$",
-          "output": "On branch main\n\nNo commits yet\n\nUntracked files:\n  (use \"git add <file>...\" to include in what will be committed)\n\n\tREADME.md\n\nnothing added to commit but untracked files present (use \"git add\" to track)",
-          "outputHint": "This output shows we're on the <strong>main branch</strong> with <i>no commits yet</i>, and have <strong>1 untracked file</strong> that needs to be added to version control."
+          "output": [
+            {
+              "text": "On branch main\n\nNo commits yet\n\nUntracked files:\n  (use \"git add <file>...\" to include in what will be committed)\n\n\tREADME.md\n\nnothing added to commit but untracked files present (use \"git add\" to track)",
+              "hint": "This output shows we're on the <strong>main branch</strong> with <i>no commits yet</i>, and have <strong>1 untracked file</strong> that needs to be added to version control."
+            }
+          ]
         }
       ]
     },
@@ -55,7 +63,7 @@
           "cmd": "git add README.md",
           "cmdHint": "<b>Add</b> the README.md file to the staging area",
           "valid": "^git\\s+add\\s+README\\.md$",
-          "output": ""
+          "output": []
         }
       ]
     },
@@ -67,7 +75,11 @@
         {
           "cmd": "ls -la .git/objects/*",
           "valid": "^ls\\s+-la\\s+\\.git/objects/\\*$",
-          "output": "..."
+          "output": [
+            {
+              "text": "..."
+            }
+          ]
         }
       ]
     }

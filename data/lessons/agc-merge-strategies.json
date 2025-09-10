@@ -16,7 +16,7 @@
         {
           "cmd": "foo",
           "valid": "^foo$",
-          "output": ""
+          "output": []
         }
       ]
     }

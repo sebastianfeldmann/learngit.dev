@@ -140,10 +140,32 @@ class GitTerminal {
         }
         
         // Display output from the matched command object
-        const output = matchedCommandObj?.output || '';
-        if (output) {
-            this.addTerminalLine(output, 'output', matchedCommandObj?.outputHint);
-        }
+        const outputs = matchedCommandObj?.output;
+
+        if (!outputs || !Array.isArray(outputs) || outputs.length === 0) {
+            // No output or empty array - add spacing
+            this.addTerminalLine('', 'space');
+        } else {
+            // Process each output item
+            outputs.forEach((outputItem, index) => {
+                // Validate output item structure
+                if (typeof outputItem !== 'object' || outputItem === null) {
+                    console.warn(`Invalid output element at index ${index}:`, outputItem);
+                    return;
+                }
+
+                const text = outputItem.text || '';
+                const hint = outputItem.hint || null;
+                
+                // Skip if neither text nor hint exists
+                if (!text && !hint) {
+                    console.warn(`Skipping output element at index ${index}: neither text nor hint provided`, outputItem);
+                    return;
+                }
+                
+                this.addTerminalLine(text, 'output', hint);
+            });
+        }        
         
         // Check if command has a 'next' property for jumping
         if (matchedCommandObj.next !== undefined) {
@@ -174,12 +196,13 @@ class GitTerminal {
         
         if (type === 'command') {
             line.innerHTML = `<span class="prompt">$ </span><span class="command-text">${this.escapeHtml(text.substring(2))}</span>`;
-        } else if (type === 'output' || type === 'error' || type === 'success') {
+        } else if (type === 'output' || type === 'error' || type === 'success' || type === 'space') {
             line.textContent = text;
             
             // Add tooltip for output hint if available
             if (hint && type === 'output') {
                 this.setupTooltip(line, hint);
+                line.classList.add('has-hint');
             }
         }
         
@@ -200,7 +223,7 @@ class GitTerminal {
     advanceStep() {
         this.currentStep++;
         this.updateUI();
-        this.addTerminalLine('', 'output'); // Add empty line for spacing
+        //this.addTerminalLine('', 'space'); // Add empty line for spacing
     }
     
     jumpToStep(targetStepId) {
@@ -213,7 +236,7 @@ class GitTerminal {
             this.currentStep++;
         }
         this.updateUI();
-        this.addTerminalLine('', 'output'); // Add empty line for spacing
+        this.addTerminalLine('', 'space'); // Add empty line for spacing
     }
     
     showLessonCompletion() {

@@ -1,8 +1,8 @@
 {
-  "title": "Git Push Workflow", 
+  "title": "Git Push Workflow",
   "description": "Learn how to push your local commits to a remote repository. This scenario covers adding a remote origin and pushing your changes to GitHub.",
   "category": "remote",
-  "level": "beginner", 
+  "level": "beginner",
   "time": "8 minutes",
   "order": 1,
   "previous": "git-commit",
@@ -16,12 +16,12 @@
         {
           "cmd": "git remote",
           "valid": "^git\\s+remote$",
-          "output": ""
+          "output": []
         },
         {
           "cmd": "git remote -v",
           "valid": "^git\\s+remote\\s+-v$",
-          "output": ""
+          "output": []
         }
       ]
     },
@@ -33,8 +33,8 @@
         {
           "cmd": "git remote add origin https://github.com/username/my-repo.git",
           "valid": "^git\\s+remote\\s+add\\s+origin\\s+https://github\\.com/[^/]+/[^/]+\\.git$",
-          "output": "",
-          "cmdHint": "Adds a remote repository called 'origin' that points to your GitHub repository URL"
+          "cmdHint": "Adds a remote repository called 'origin' that points to your GitHub repository URL",
+          "output": []
         }
       ]
     },
@@ -46,7 +46,11 @@
         {
           "cmd": "git remote -v",
           "valid": "^git\\s+remote\\s+-v$",
-          "output": "origin\thttps://github.com/username/my-repo.git (fetch)\norigin\thttps://github.com/username/my-repo.git (push)"
+          "output": [
+            {
+              "text": "origin\thttps://github.com/username/my-repo.git (fetch)\norigin\thttps://github.com/username/my-repo.git (push)"
+            }
+          ]
         }
       ]
     },
@@ -58,12 +62,20 @@
         {
           "cmd": "git branch",
           "valid": "^git\\s+branch$",
-          "output": "* main"
+          "output": [
+            {
+              "text": "* main"
+            }
+          ]
         },
         {
           "cmd": "git status",
           "valid": "^git\\s+status$",
-          "output": "On branch main\nnothing to commit, working tree clean"
+          "output": [
+            {
+              "text": "On branch main\nnothing to commit, working tree clean"
+            }
+          ]
         }
       ]
     },
@@ -75,14 +87,22 @@
         {
           "cmd": "git push -u origin main",
           "valid": "^git\\s+push\\s+-u\\s+origin\\s+main$",
-          "output": "Enumerating objects: 4, done.\nCounting objects: 100% (4/4), done.\nDelta compression using up to 8 threads\nCompressing objects: 100% (3/3), done.\nWriting objects: 100% (4/4), 1.12 KiB | 1.12 MiB/s, done.\nTotal 4 (delta 0), reused 0 (delta 0), pack-reused 0\nTo https://github.com/username/my-repo.git\n * [new branch]      main -> main\nBranch 'main' set up to track remote branch 'main' from 'origin'.",
           "cmdHint": "Pushes your main branch to the remote origin and sets up tracking (-u flag)",
-          "outputHint": "Shows the push progress, creates the main branch on GitHub, and establishes tracking between local and remote main branches"
+          "output": [
+            {
+              "text": "Enumerating objects: 4, done.\nCounting objects: 100% (4/4), done.\nDelta compression using up to 8 threads\nCompressing objects: 100% (3/3), done.\nWriting objects: 100% (4/4), 1.12 KiB | 1.12 MiB/s, done.\nTotal 4 (delta 0), reused 0 (delta 0), pack-reused 0\nTo https://github.com/username/my-repo.git\n * [new branch]      main -> main\nBranch 'main' set up to track remote branch 'main' from 'origin'.",
+              "hint": "Shows the push progress, creates the main branch on GitHub, and establishes tracking between local and remote main branches"
+            }
+          ]
         },
         {
           "cmd": "git push --set-upstream origin main",
           "valid": "^git\\s+push\\s+--set-upstream\\s+origin\\s+main$",
-          "output": "Enumerating objects: 4, done.\nCounting objects: 100% (4/4), done.\nDelta compression using up to 8 threads\nCompressing objects: 100% (3/3), done.\nWriting objects: 100% (4/4), 1.12 KiB | 1.12 MiB/s, done.\nTotal 4 (delta 0), reused 0 (delta 0), pack-reused 0\nTo https://github.com/username/my-repo.git\n * [new branch]      main -> main\nBranch 'main' set up to track remote branch 'main' from 'origin'."
+          "output": [
+            {
+              "text": "Enumerating objects: 4, done.\nCounting objects: 100% (4/4), done.\nDelta compression using up to 8 threads\nCompressing objects: 100% (3/3), done.\nWriting objects: 100% (4/4), 1.12 KiB | 1.12 MiB/s, done.\nTotal 4 (delta 0), reused 0 (delta 0), pack-reused 0\nTo https://github.com/username/my-repo.git\n * [new branch]      main -> main\nBranch 'main' set up to track remote branch 'main' from 'origin'."
+            }
+          ]
         }
       ]
     },
@@ -94,10 +114,13 @@
         {
           "cmd": "git status",
           "valid": "^git\\s+status$",
-          "output": "On branch main\nYour branch is up to date with 'origin/main'.\n\nnothing to commit, working tree clean"
+          "output": [
+            {
+              "text": "On branch main\nYour branch is up to date with 'origin/main'.\n\nnothing to commit, working tree clean"
+            }
+          ]
         }
       ]
     }
   ]
 }
-
